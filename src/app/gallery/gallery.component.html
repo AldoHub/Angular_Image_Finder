@@ -1,0 +1,25 @@
+<div>
+
+  <div class="searchForm">
+    <form (ngSubmit)="getPictures($event)">
+      <input [(ngModel)]="image" type="text" name="searchImage">
+      <input type="submit" value="search"> 
+      
+    </form>
+    <p> you are looking for: {{image}}</p>
+    <p>{{message}}</p>
+  </div>
+
+<div class="gallery-container">
+  <div *ngFor="let picture of pictures">
+      <div class="pic">
+        <a href="{{picture.url}}" target="_blank"><img src="{{picture.url}}" /></a>
+        <div class="screen">
+          <i class="fa fa-hand-pointer-o" aria-hidden="true"></i>
+        </div>
+      </div>   
+
+  </div>
+</div>
+
+</div>
